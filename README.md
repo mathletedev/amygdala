@@ -1,2 +1,3 @@
 # amygdala
-A Rust BF interpreter
+
+> A Rust BF interpreter
