@@ -20,7 +20,7 @@ fn main() {
 		process::exit(1);
 	}
 
-	let error = |msg, pos: (usize, usize), line| {
+	let error = |msg: &str, pos: (usize, usize), line: &str| {
 		println!(
 			"{}{}{}",
 			path.to_str().expect(""),
@@ -62,7 +62,7 @@ fn main() {
 	let mut brackets: HashMap<(usize, usize), (usize, usize)> = HashMap::new();
 	let mut stack: Vec<(usize, usize)> = vec![];
 
-	let add_one = |pos: (usize, usize), tabs| (pos.0 + 1, pos.1 + 1 - tabs);
+	let add_one = |pos: (usize, usize), tabs: usize| (pos.0 + 1, pos.1 + 1 - tabs);
 
 	let parse_tabs = |line: String| {
 		let mut tabs: usize = 0;
